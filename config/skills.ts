@@ -9,157 +9,122 @@ export interface skillsInterface {
 
 export const skillsUnsorted: skillsInterface[] = [
   {
-    name: "Next.js",
+    name: "React.js",
     description:
-      "Effortlessly build dynamic apps with routing, layouts, loading UI, and API routes.",
-    rating: 5,
-    icon: Icons.nextjs,
-  },
-  {
-    name: "React",
-    description:
-      "Craft interactive user interfaces using components, state, props, and virtual DOM.",
+      "Build modern and interactive web applications using reusable components, hooks, and scalable frontend architecture.",
     rating: 5,
     icon: Icons.react,
-  },
-  {
-    name: "GraphQL",
-    description:
-      "Fetch data precisely with a powerful query language for APIs and runtime execution.",
-    rating: 4,
-    icon: Icons.graphql,
-  },
-  {
-    name: "Nest.js",
-    description:
-      "Create scalable and modular applications with a progressive Node.js framework.",
-    rating: 4,
-    icon: Icons.nestjs,
-  },
-  {
-    name: "express.js",
-    description:
-      "Build web applications and APIs quickly using a fast, unopinionated Node.js framework.",
-    rating: 5,
-    icon: Icons.express,
-  },
-  {
-    name: "Node.js",
-    description:
-      "Run JavaScript on the server side, enabling dynamic and responsive applications.",
-    rating: 5,
-    icon: Icons.nodejs,
-  },
-  {
-    name: "MongoDB",
-    description:
-      "Store and retrieve data seamlessly with a flexible and scalable NoSQL database.",
-    rating: 5,
-    icon: Icons.mongodb,
-  },
-  {
-    name: "Typescript",
-    description:
-      "Enhance JavaScript with static types, making code more understandable and reliable.",
-    rating: 5,
-    icon: Icons.typescript,
-  },
-  {
-    name: "Javascript",
-    description:
-      "Create interactive and dynamic web experiences with the versatile scripting language.",
-    rating: 5,
-    icon: Icons.javascript,
-  },
-  {
-    name: "HTML 5",
-    description:
-      "Structure web content beautifully with the latest version of HyperText Markup Language.",
-    rating: 4,
-    icon: Icons.html5,
-  },
-  {
-    name: "CSS 3",
-    description:
-      "Style web pages creatively with the latest iteration of Cascading Style Sheets.",
-    rating: 4,
-    icon: Icons.css3,
-  },
-  {
-    name: "React Native",
-    description:
-      "Develop cross-platform mobile apps using React for consistent and engaging experiences.",
-    rating: 4,
-    icon: Icons.react,
-  },
-  {
-    name: "Angular",
-    description:
-      "Build dynamic web apps with a TypeScript-based open-source framework by Google.",
-    rating: 3,
-    icon: Icons.angular,
-  },
-  {
-    name: "Redux",
-    description:
-      "Manage app state effectively using a predictable and centralized state container.",
-    rating: 4,
-    icon: Icons.redux,
-  },
-  {
-    name: "Socket.io",
-    description:
-      "Enable real-time, bidirectional communication between clients and servers effortlessly.",
-    rating: 3,
-    icon: Icons.socketio,
-  },
-  {
-    name: "Material UI",
-    description:
-      "Create stunning and responsive UIs with a popular React UI framework.",
-    rating: 4,
-    icon: Icons.mui,
   },
 
   {
-    name: "Tailwind CSS",
+    name: "TypeScript",
     description:
-      "Design beautiful, modern websites faster with a utility-first CSS framework.",
+      "Develop reliable and maintainable applications with strong typing and scalable React-based development.",
     rating: 5,
-    icon: Icons.tailwindcss,
+    icon: Icons.typescript,
   },
+
   {
-    name: "AWS",
+    name: "Next.js",
     description:
-      "Utilize Amazon Web Services to build and deploy scalable, reliable, and secure applications.",
-    rating: 3,
-    icon: Icons.amazonaws,
+      "Create high-performance React applications with modern routing, rendering, optimization, and scalable architecture.",
+    rating: 5,
+    icon: Icons.nextjs,
   },
+
   {
-    name: "Bootstrap",
+    name: "WordPress",
     description:
-      "Quickly create responsive and appealing web designs using a popular CSS framework.",
-    rating: 2,
-    icon: Icons.bootstrap,
+      "Develop and customize professional WordPress websites using themes, plugins, and custom website solutions.",
+    rating: 5,
+    icon: Icons.html5,
   },
+
   {
-    name: "MySQL",
+    name: "Shopify",
     description:
-      "Manage and organize relational databases efficiently for data-driven applications.",
-    rating: 2,
-    icon: Icons.mysql,
+      "Build and customize Shopify e-commerce stores with responsive storefronts, product pages, and optimized customer journeys.",
+    rating: 5,
+    icon: Icons.css3,
   },
+
   {
-    name: "Netlify",
+    name: "PHP Laravel",
     description:
-      "Manage and organize relational databases efficiently for data-driven applications.",
+      "Develop backend applications and APIs using Laravel framework, MVC architecture, and database integration.",
     rating: 4,
-    icon: Icons.netlify,
+    icon: Icons.javascript,
+  },
+
+  {
+    name: "HTML 5",
+    description:
+      "Create semantic and SEO-friendly website structures using modern HTML standards.",
+    rating: 5,
+    icon: Icons.html5,
+  },
+
+  {
+    name: "CSS 3",
+    description:
+      "Design responsive and modern interfaces using CSS layouts, animations, and responsive techniques.",
+    rating: 5,
+    icon: Icons.css3,
+  },
+
+  {
+    name: "WordPress Plugins",
+    description:
+      "Configure and customize WordPress plugins to extend website functionality and meet business requirements.",
+    rating: 4,
+    icon: Icons.wordpress || Icons.html5,
+  },
+
+  {
+    name: "HubSpot",
+    description:
+      "Create CRM workflows, lead management processes, and marketing automation solutions.",
+    rating: 4,
+    icon: Icons.javascript,
+  },
+
+  {
+    name: "n8n Automation",
+    description:
+      "Build AI-powered automation workflows connecting APIs, CRMs, and business applications.",
+    rating: 5,
+    icon: Icons.nodejs,
+  },
+
+  {
+    name: "Make.com",
+    description:
+      "Create automated workflows and integrations between different business applications.",
+    rating: 4,
+    icon: Icons.nodejs,
+  },
+
+  {
+    name: "Zapier",
+    description:
+      "Develop no-code automation workflows connecting different platforms and applications.",
+    rating: 4,
+    icon: Icons.nodejs,
+  },
+
+  {
+    name: "GoHighLevel (GHL)",
+    description:
+      "Configure CRM pipelines, automation workflows, and client management systems.",
+    rating: 4,
+    icon: Icons.javascript,
   },
 ];
+
 
 export const skills = skillsUnsorted
   .slice()
   .sort((a, b) => b.rating - a.rating);
+
 
 export const featuredSkills = skills.slice(0, 6);

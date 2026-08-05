@@ -2,10 +2,10 @@ import type { MetadataRoute } from "next";
 
 export default function manifest(): MetadataRoute.Manifest {
   return {
-    name: "Naman Barkiya | Applied AI Engineer",
-    short_name: "Naman Barkiya",
+    name: "Sameer hani | Applied AI Engineer",
+    short_name: "Sameer hani",
     description:
-      "Naman Barkiya - Applied AI Engineer working at the intersection of AI, data, and scalable software systems.",
+      "Sameer hani - Applied AI Engineer working at the intersection of AI, data, and scalable software systems.",
     start_url: "/",
     display: "standalone",
     background_color: "#ffffff",
