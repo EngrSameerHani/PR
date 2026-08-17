@@ -6,8 +6,8 @@ export type ValidSkills =
   | "express.js"
   | "Node.js"
   | "MongoDB"
-  | "Typescript"
-  | "Javascript"
+  | "TypeScript"
+  | "JavaScript"
   | "HTML 5"
   | "CSS 3"
   | "React Native"
@@ -56,29 +56,15 @@ export type ValidSkills =
   | "Flutter"
   | "Dart"
   | "Flask"
-  | "Django"
-  | "FastAPI"
   | "SQL"
   | "NoSQL"
-  | "Framer Motion";
+  | "Framer Motion"
 
-export type ValidCategory =
-  | "Full Stack"
-  | "Frontend"
-  | "Backend"
+  // CMS & E-commerce
+  | "Shopify"
+  | "WordPress"
+  | "Liquid"
+
+  // Design & Marketing
   | "UI/UX"
-  | "Web Dev"
-  | "Mobile Dev"
-  | "3D Modeling";
-
-export type ValidExpType = "Personal" | "Professional";
-
-export type ValidPages =
-  | "home"
-  | "skills"
-  | "projects"
-  | "experience"
-  | "contact"
-  | "contributions"
-  | "resume"
-  | "blogs";
+  | "SEO";

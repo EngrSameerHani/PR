@@ -53,9 +53,9 @@ export const experiences: ExperienceInterface[] = [
 
     skills: [
       "Shopify",
-      "Wordpress",
+      "WordPress",
       "Liquid",
-      "Javascript",
+      "JavaScript",
       "HTML 5",
       "CSS 3",
       "React",
@@ -105,13 +105,13 @@ export const experiences: ExperienceInterface[] = [
 
     skills: [
       "React",
-      "Typescript",
+      "TypeScript",
       "Next.js",
       "Tailwind CSS",
-      "Wordpress",
+      "WordPress",
       "Laravel",
       "MongoDB",
-      "Javascript",
+      "JavaScript",
       "HTML 5",
       "CSS 3",
     ],
@@ -158,11 +158,11 @@ export const experiences: ExperienceInterface[] = [
     ],
 
     skills: [
-      "Wordpress",
+      "WordPress",
       "PHP",
       "HTML 5",
       "CSS 3",
-      "Javascript",
+      "JavaScript",
       "React",
       "SEO",
       "UI/UX",
