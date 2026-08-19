@@ -29,14 +29,14 @@ export function MainNav({ items, children }: MainNavProps) {
   }, [pathname]);
 
   const navItems = [
-    { title: "HOME", href: "/" },
-    { title: "ABOUT US", href: "/about" },
-    { title: "PROPERTIES", href: "/projects" },
-    { title: "OUR SERVICES", href: "/services" },
-    { title: "BLOG", href: "/blogs" },
-    { title: "CONTACT", href: "/contact" },
-  ];
-
+  { title: "HOME", href: "/" },
+  { title: "ABOUT US", href: "/who-we-are" },
+  { title: "PROPERTIES", href: "/projectsc" },
+  { title: "OUR SERVICES", href: "/Serv" },
+  { title: "BLOG", href: "/blog" },
+  { title: "CONTACT", href: "/contact/complaint-to-ceo" },
+  { title: "BANK ACCOUNTS", href: "/bank-accounts" },
+];
   return (
     <header className="fixed left-0 right-0 top-0 z-50 px-3 pt-3 sm:px-5">
       <div className="mx-auto max-w-[1450px] overflow-hidden rounded-[18px] border border-white/10 bg-[#075333]/95 shadow-[0_10px_40px_rgba(0,0,0,0.18)] backdrop-blur-xl">

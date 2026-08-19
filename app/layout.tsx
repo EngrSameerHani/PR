@@ -6,6 +6,8 @@ import localFont from "next/font/local";
 import Script from "next/script";
 
 import { Analytics } from "@/components/common/analytics";
+import { MainNav } from "@/components/common/main-nav";
+import { SiteFooter } from "@/components/common/site-footer";
 import { ThemeProvider } from "@/components/common/theme-provider";
 import { Toaster } from "@/components/ui/toaster";
 import { siteConfig } from "@/config/site";
@@ -17,7 +19,7 @@ const fontSans = FontSans({
   variable: "--font-sans",
 });
 
-// Font files can be colocated inside of `pages`
+// Heading font
 const fontHeading = localFont({
   src: "../assets/fonts/CalSans-SemiBold.woff2",
   variable: "--font-heading",
@@ -29,19 +31,25 @@ interface RootLayoutProps {
 
 export const metadata = {
   metadataBase: new URL(siteConfig.url),
+
   title: {
     default: siteConfig.name,
     template: `%s | ${siteConfig.name}`,
   },
+
   description: siteConfig.description,
+
   keywords: siteConfig.keywords,
+
   authors: [
     {
       name: siteConfig.authorName,
       url: siteConfig.url,
     },
   ],
+
   creator: siteConfig.username,
+
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -58,6 +66,7 @@ export const metadata = {
       },
     ],
   },
+
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
@@ -72,18 +81,23 @@ export const metadata = {
     ],
     creator: `@${siteConfig.username}`,
   },
+
   icons: {
     icon: siteConfig.iconIco,
     shortcut: siteConfig.logoIcon,
     apple: siteConfig.logoIcon,
   },
+
   manifest: `${siteConfig.url}/site.webmanifest`,
+
   alternates: {
     canonical: siteConfig.url,
   },
+
   robots: {
     index: true,
     follow: true,
+
     googleBot: {
       index: true,
       follow: true,
@@ -91,20 +105,23 @@ export const metadata = {
       "max-snippet": -1,
     },
   },
+
   verification: {
     google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION,
   },
 };
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({
+  children,
+}: RootLayoutProps) {
+  // Google Analytics ID is optional.
+  // The application should not crash if it is missing.
   const GA_ID = process.env.NEXT_PUBLIC_GOOGLE_MEASUREMENT_ID;
-  if (!GA_ID) {
-    throw new Error("Missing Google Analytics ID");
-  }
 
   return (
     <html lang="en" suppressHydrationWarning>
       <head />
+
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
@@ -126,11 +143,26 @@ export default function RootLayout({ children }: RootLayoutProps) {
             "synthwave",
           ]}
         >
-          {children}
+          {/* ================= HEADER ================= */}
+          <MainNav />
+
+          {/* ================= PAGE CONTENT ================= */}
+          <main>
+            {children}
+          </main>
+
+          {/* ================= FOOTER ================= */}
+          <SiteFooter />
+
+          {/* ================= GLOBAL COMPONENTS ================= */}
           <Analytics />
+
           <Toaster />
+
           <ModalProvider />
         </ThemeProvider>
+
+        {/* ================= CONVOT WIDGET ================= */}
         <Script
           src="https://convot.xyz/widget.js"
           data-token="3vpr28Va7E8luRq8DMOStAr9tefOCVqifQ28fpp6grrKS4zflNRZQjQpmeu4os_2nuLmmh1DOshndiN5O1vvGg"
@@ -138,7 +170,9 @@ export default function RootLayout({ children }: RootLayoutProps) {
           strategy="afterInteractive"
         />
       </body>
-      <GoogleAnalytics gaId={GA_ID} />
+
+      {/* ================= GOOGLE ANALYTICS ================= */}
+      {GA_ID && <GoogleAnalytics gaId={GA_ID} />}
     </html>
   );
 }

@@ -18,7 +18,16 @@ type Project = {
   image: string;
 };
 
+/* =========================================================
+   PROJECT DATA
+========================================================= */
+
 const projects: Project[] = [
+  /* =======================================================
+     FIRST 8 PROJECTS
+     These are displayed initially
+  ======================================================= */
+
   {
     id: 1,
     title: "Bahria Town",
@@ -26,6 +35,7 @@ const projects: Project[] = [
     category: "Gated Community",
     image: "/bt.jpg",
   },
+
   {
     id: 2,
     title: "DHA Margalla",
@@ -33,6 +43,7 @@ const projects: Project[] = [
     category: "Residential",
     image: "/Dhamargalla.jpg",
   },
+
   {
     id: 3,
     title: "Faisal Hills",
@@ -40,6 +51,7 @@ const projects: Project[] = [
     category: "Residential",
     image: "/FH.jpg",
   },
+
   {
     id: 4,
     title: "Faisal Town",
@@ -47,6 +59,7 @@ const projects: Project[] = [
     category: "Residential",
     image: "/ft.jpg",
   },
+
   {
     id: 5,
     title: "Faisal Town Phase 2",
@@ -54,6 +67,7 @@ const projects: Project[] = [
     category: "Residential",
     image: "/ft2.jpg",
   },
+
   {
     id: 6,
     title: "Gulberg",
@@ -61,6 +75,7 @@ const projects: Project[] = [
     category: "Mixed Use",
     image: "/gulberg.jpg",
   },
+
   {
     id: 7,
     title: "Multi Gardens",
@@ -68,6 +83,7 @@ const projects: Project[] = [
     category: "Gated Community",
     image: "/mpchs.jpg",
   },
+
   {
     id: 8,
     title: "Park View City",
@@ -75,7 +91,80 @@ const projects: Project[] = [
     category: "Mixed Use",
     image: "/parkviewcity.jpg",
   },
+
+  /* =======================================================
+     ADDITIONAL PROJECTS
+     These appear after clicking "Explore All Projects"
+  ======================================================= */
+
+  {
+    id: 9,
+    title: "Capital Smart City",
+    location: "Islamabad, Pakistan",
+    category: "Gated Community",
+    image: "/Capital Smart City.jpg",
+  },
+
+  {
+    id: 10,
+    title: "CDA Zone",
+    location: "Islamabad, Pakistan",
+    category: "Residential",
+    image: "/CDA Zone.jpg",
+  },
+
+  {
+    id: 11,
+    title: "DHA",
+    location: "Islamabad, Pakistan",
+    category: "Residential",
+    image: "/DHA.jpg",
+  },
+
+  {
+    id: 12,
+    title: "Gulberg Residencia",
+    location: "Islamabad, Pakistan",
+    category: "Residential",
+    image: "/Gulberg Resedencia.jpg",
+  },
+
+  {
+    id: 13,
+    title: "New Metro City Gujar Khan",
+    location: "Gujar Khan, Pakistan",
+    category: "Gated Community",
+    image: "/New Metro City Gujar Khan.jpg",
+  },
+
+  {
+    id: 14,
+    title: "PWD",
+    location: "Islamabad, Pakistan",
+    category: "Residential",
+    image: "/PWD.jpg",
+  },
+
+  {
+    id: 15,
+    title: "Saffron City",
+    location: "Islamabad, Pakistan",
+    category: "Gated Community",
+    image: "/Saffron City.jpg",
+  },
+
+  {
+    id: 16,
+    title: "Soan Garden",
+    location: "Islamabad, Pakistan",
+    category: "Residential",
+    image: "/Soan Garden.jpg",
+  },
 ];
+
+/* =========================================================
+   FILTERS
+========================================================= */
 
 const filters: ProjectCategory[] = [
   "All Projects",
@@ -85,13 +174,24 @@ const filters: ProjectCategory[] = [
   "Mixed Use",
 ];
 
+/* =========================================================
+   MAIN COMPONENT
+========================================================= */
+
 export default function IslamabadProjectsSection() {
   const [activeFilter, setActiveFilter] =
     useState<ProjectCategory>("All Projects");
 
   const [isVisible, setIsVisible] = useState(false);
 
+  // Controls whether projects 09-16 are displayed
+  const [showAllProjects, setShowAllProjects] = useState(false);
+
   const sectionRef = useRef<HTMLElement | null>(null);
+
+  /* =======================================================
+     SCROLL ANIMATION
+  ======================================================= */
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -113,12 +213,49 @@ export default function IslamabadProjectsSection() {
     return () => observer.disconnect();
   }, []);
 
+  /* =======================================================
+     FILTER PROJECTS
+  ======================================================= */
+
   const filteredProjects =
     activeFilter === "All Projects"
       ? projects
       : projects.filter(
           (project) => project.category === activeFilter
         );
+
+  /* =======================================================
+     DISPLAY PROJECTS
+     
+     showAllProjects = false
+       => first 8 projects
+
+     showAllProjects = true
+       => all matching projects
+  ======================================================= */
+
+  const visibleProjects = showAllProjects
+    ? filteredProjects
+    : filteredProjects.slice(0, 8);
+
+  /* =======================================================
+     FILTER HANDLER
+     
+     When user changes category, go back to first 8.
+  ======================================================= */
+
+  const handleFilterChange = (filter: ProjectCategory) => {
+    setActiveFilter(filter);
+    setShowAllProjects(false);
+  };
+
+  /* =======================================================
+     TOGGLE ALL PROJECTS
+  ======================================================= */
+
+  const handleToggleProjects = () => {
+    setShowAllProjects((currentValue) => !currentValue);
+  };
 
   return (
     <section
@@ -230,7 +367,8 @@ export default function IslamabadProjectsSection() {
               return (
                 <button
                   key={filter}
-                  onClick={() => setActiveFilter(filter)}
+                  type="button"
+                  onClick={() => handleFilterChange(filter)}
                   className={`flex shrink-0 items-center gap-2 rounded-full px-5 py-3 text-xs font-semibold transition-all duration-300 md:px-6 ${
                     active
                       ? "bg-[#075a38] text-white shadow-lg shadow-[#075a38]/20"
@@ -260,9 +398,10 @@ export default function IslamabadProjectsSection() {
             PROJECT GRID
         ==================================================== */}
 
-        <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
-
-          {filteredProjects.map((project, index) => (
+        <div
+          className={`mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 transition-all duration-500`}
+        >
+          {visibleProjects.map((project, index) => (
             <ProjectCard
               key={`${project.id}-${activeFilter}`}
               project={project}
@@ -270,33 +409,69 @@ export default function IslamabadProjectsSection() {
               isVisible={isVisible}
             />
           ))}
-
         </div>
 
         {/* ===================================================
-            BOTTOM CTA
+            EXPLORE ALL PROJECTS BUTTON
         ==================================================== */}
 
-        <div
-          className={`mt-10 flex justify-center transition-all delay-500 duration-1000 ${
-            isVisible
-              ? "translate-y-0 opacity-100"
-              : "translate-y-8 opacity-0"
-          }`}
-        >
-          <button className="group flex items-center gap-4 rounded-full border border-[#cbdacf] bg-white px-6 py-3 text-sm font-semibold text-[#174d36] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#075a38] hover:shadow-xl">
+        {filteredProjects.length > 8 && (
+          <div
+            className={`mt-10 flex justify-center transition-all delay-500 duration-1000 ${
+              isVisible
+                ? "translate-y-0 opacity-100"
+                : "translate-y-8 opacity-0"
+            }`}
+          >
+            <button
+              type="button"
+              onClick={handleToggleProjects}
+              aria-expanded={showAllProjects}
+              className="group flex items-center gap-4 rounded-full border border-[#cbdacf] bg-white px-6 py-3 text-sm font-semibold text-[#174d36] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-[#075a38] hover:shadow-xl"
+            >
+              {/* Icon */}
 
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#e8f4e9] text-[#075a38] transition-all duration-300 group-hover:bg-[#075a38] group-hover:text-white">
-              ▦
-            </span>
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#e8f4e9] text-[#075a38] transition-all duration-300 group-hover:bg-[#075a38] group-hover:text-white">
+                ▦
+              </span>
 
-            Explore All Projects
+              {/* Button Text */}
 
-            <span className="text-lg transition-transform duration-300 group-hover:translate-x-1">
-              →
-            </span>
+              <span>
+                {showAllProjects
+                  ? "Show Less"
+                  : "Explore All Projects"}
+              </span>
 
-          </button>
+              {/* Arrow */}
+
+              <span
+                className={`text-lg transition-transform duration-300 ${
+                  showAllProjects
+                    ? "rotate-[-90deg]"
+                    : "group-hover:translate-x-1"
+                }`}
+              >
+                →
+              </span>
+            </button>
+          </div>
+        )}
+
+        {/* ===================================================
+            PROJECT COUNT
+        ==================================================== */}
+
+        <div className="mt-5 text-center text-xs text-[#6a786f]">
+          Showing{" "}
+          <span className="font-semibold text-[#075a38]">
+            {visibleProjects.length}
+          </span>{" "}
+          of{" "}
+          <span className="font-semibold text-[#075a38]">
+            {filteredProjects.length}
+          </span>{" "}
+          projects
         </div>
       </div>
     </section>
@@ -324,10 +499,12 @@ function ProjectCard({
           : "translate-y-16 opacity-0"
       }`}
       style={{
-        transitionDelay: `${250 + index * 100}ms`,
+        transitionDelay: `${250 + Math.min(index, 7) * 100}ms`,
       }}
     >
-      {/* IMAGE */}
+      {/* =====================================================
+          IMAGE
+      ====================================================== */}
 
       <Image
         src={project.image}
@@ -337,48 +514,48 @@ function ProjectCard({
         className="object-cover transition-transform duration-[1000ms] ease-out group-hover:scale-110"
       />
 
-      {/* DARK GRADIENT */}
+      {/* =====================================================
+          DARK GRADIENT
+      ====================================================== */}
 
       <div className="absolute inset-0 bg-gradient-to-b from-black/5 via-black/10 to-black/85 transition-all duration-500 group-hover:from-black/10 group-hover:via-black/20 group-hover:to-black/90" />
 
-      {/* CATEGORY */}
+      {/* =====================================================
+          CATEGORY
+      ====================================================== */}
 
       <div className="absolute left-4 top-4">
-
         <span className="flex items-center gap-2 rounded-full border border-white/20 bg-[#08482f]/85 px-3 py-1.5 text-[9px] font-semibold uppercase tracking-wide text-white backdrop-blur-md">
-
           <span className="h-1.5 w-1.5 rounded-full bg-[#b8e5a9]" />
 
           {project.category}
-
         </span>
-
       </div>
 
-      {/* NUMBER */}
+      {/* =====================================================
+          NUMBER
+      ====================================================== */}
 
       <div className="absolute right-4 top-4">
-
         <span className="text-[11px] font-medium text-white/70">
-          0{project.id}
+          {String(project.id).padStart(2, "0")}
         </span>
-
       </div>
 
-      {/* CARD CONTENT */}
+      {/* =====================================================
+          CARD CONTENT
+      ====================================================== */}
 
       <div className="absolute inset-x-0 bottom-0 p-5">
 
         {/* LOCATION */}
 
         <div className="mb-2 flex items-center gap-1.5 text-[10px] text-white/75">
-
           <span className="text-[#d9a52b]">
             ●
           </span>
 
           {project.location}
-
         </div>
 
         {/* TITLE */}
@@ -396,16 +573,18 @@ function ProjectCard({
           </span>
 
           <button
+            type="button"
             aria-label={`Explore ${project.title}`}
             className="flex h-10 w-10 items-center justify-center rounded-full bg-white/95 text-lg text-[#075a38] transition-all duration-500 group-hover:rotate-[-10deg] group-hover:bg-[#d9a52b] group-hover:text-[#11160d]"
           >
             ↗
           </button>
-
         </div>
       </div>
 
-      {/* HOVER BORDER */}
+      {/* =====================================================
+          HOVER BORDER
+      ====================================================== */}
 
       <div className="pointer-events-none absolute inset-0 rounded-[24px] border border-white/0 transition-all duration-500 group-hover:border-[#d9a52b]/60" />
     </article>

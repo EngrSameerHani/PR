@@ -15,20 +15,20 @@ type Project = {
 const projects: Project[] = [
   {
     id: "01",
-    title: "The Sultan Hotels & Resorts",
-    location: "Galiyat",
-    category: "Luxury Hospitality",
+    title: "Al Ghurair Giga",
+    location: "Islamabad",
+    category: "Real Estate",
     description:
-      "A premium destination combining nature, luxury and high-end hospitality in the beautiful Galiyat region.",
+      "A landmark real estate development offering modern residential, commercial and lifestyle opportunities.",
     image: "/gulber.png",
   },
   {
     id: "02",
-    title: "Premium Residential Living",
+    title: "Imarat",
     location: "Islamabad",
-    category: "Residential",
+    category: "Real Estate",
     description:
-      "Modern residential opportunities designed for comfortable family living and long-term investment.",
+      "A leading real estate group delivering innovative developments and premium investment opportunities.",
     image: "/gulber.png",
   },
   {
@@ -42,11 +42,11 @@ const projects: Project[] = [
   },
   {
     id: "04",
-    title: "ZN Tower",
-    location: "Rawalpindi",
-    category: "Commercial",
+    title: "Premier Choice International",
+    location: "Islamabad",
+    category: "Real Estate",
     description:
-      "A contemporary commercial destination positioned for businesses, brands and investors.",
+      "A trusted real estate company providing quality property opportunities and investment solutions.",
     image: "/gulber.png",
   },
   {
@@ -60,11 +60,20 @@ const projects: Project[] = [
   },
   {
     id: "06",
-    title: "Executive Villas",
-    location: "Faisal Hills",
-    category: "Luxury Villas",
+    title: "Faisal Jewels",
+    location: "Islamabad",
+    category: "Commercial",
     description:
-      "Elegant contemporary villas designed for premium family living and future value.",
+      "A premium commercial destination offering an attractive opportunity for businesses and investors.",
+    image: "/gulber.png",
+  },
+  {
+    id: "07",
+    title: "Faisal Jewels",
+    location: "Islamabad",
+    category: "Commercial",
+    description:
+      "A premium commercial destination offering an attractive opportunity for businesses and investors.",
     image: "/gulber.png",
   },
 ];
