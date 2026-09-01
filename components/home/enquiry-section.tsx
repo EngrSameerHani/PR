@@ -18,34 +18,54 @@ export default function EnquirySection() {
   return (
     <section className="relative w-full overflow-hidden bg-[#f3faf1] py-16 sm:py-20 lg:py-28">
 
-      {/* ================= BACKGROUND ================= */}
+      {/* =====================================================
+          BACKGROUND
+      ====================================================== */}
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
 
+        {/* Green corner */}
         <div className="absolute -left-40 -top-40 h-[500px] w-[700px] rounded-br-[50%] bg-[#075a38]" />
 
+        {/* Gold curved line */}
         <div className="absolute -left-32 -top-32 h-[470px] w-[650px] rounded-br-[50%] border-b-[4px] border-[#d9a52b]" />
 
+        {/* Center glow */}
         <div className="absolute left-1/2 top-1/2 h-[700px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#d8f1d4]/60 blur-[130px]" />
 
+        {/* Right glow */}
         <div className="absolute -right-40 bottom-0 h-[500px] w-[500px] rounded-full bg-[#bfe6c5]/40 blur-[100px]" />
 
+        {/* Decorative buildings */}
         <div className="absolute bottom-0 right-0 hidden h-[430px] w-[380px] opacity-[0.06] lg:block">
+
           <div className="absolute bottom-0 right-0 h-72 w-14 rounded-t bg-[#075a38]" />
+
           <div className="absolute bottom-0 right-20 h-96 w-16 rounded-t bg-[#075a38]" />
+
           <div className="absolute bottom-0 right-44 h-64 w-12 rounded-t bg-[#075a38]" />
+
           <div className="absolute bottom-0 right-64 h-80 w-10 rounded-t bg-[#075a38]" />
+
         </div>
 
       </div>
 
-      {/* ================= MAIN ================= */}
+      {/* =====================================================
+          FULL-WIDTH MAIN CONTENT
+      ====================================================== */}
 
-      <div className="relative mx-auto w-full max-w-[1500px] px-5 sm:px-8 lg:px-12">
+      <div className="relative w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-14 2xl:px-16">
+
+        {/* ===================================================
+            MAIN CARD
+        ==================================================== */}
 
         <div className="relative overflow-hidden rounded-[35px] border border-[#d4e7d7] bg-white/90 shadow-[0_30px_100px_rgba(7,90,56,0.14)] backdrop-blur-sm">
 
-          {/* ================= HEADER ================= */}
+          {/* =================================================
+              HEADER
+          ================================================== */}
 
           <div className="border-b border-[#e2eee4] px-6 py-7 text-center sm:px-10 lg:px-16">
 
@@ -67,17 +87,24 @@ export default function EnquirySection() {
 
           </div>
 
-          {/* ================= CONTENT ================= */}
+          {/* =================================================
+              CONTENT
+          ================================================== */}
 
           <div className="grid lg:grid-cols-[1fr_1.05fr]">
 
-            {/* ================= LEFT ================= */}
+            {/* ===============================================
+                LEFT SIDE
+            ================================================ */}
 
             <div className="relative flex min-h-[570px] flex-col justify-center overflow-hidden px-7 py-14 sm:px-12 lg:px-16 xl:px-20">
 
+              {/* Decorative circle */}
               <div className="pointer-events-none absolute -left-32 bottom-[-150px] h-[400px] w-[400px] rounded-full bg-[#e2f4e2]" />
 
-              {/* Badge */}
+              {/* =========================================
+                  BADGE
+              ========================================== */}
 
               <div className="relative mb-6 flex w-fit items-center gap-3 rounded-full border border-[#c9e5ce] bg-[#edf8ed] px-5 py-2.5">
 
@@ -91,7 +118,9 @@ export default function EnquirySection() {
 
               </div>
 
-              {/* Heading */}
+              {/* =========================================
+                  HEADING
+              ========================================== */}
 
               <h2 className="relative max-w-[650px] font-serif text-4xl font-semibold leading-[1.03] tracking-[-0.04em] text-[#0b3927] sm:text-5xl lg:text-6xl xl:text-7xl">
 
@@ -109,7 +138,9 @@ export default function EnquirySection() {
 
               </h2>
 
-              {/* Description */}
+              {/* =========================================
+                  DESCRIPTION
+              ========================================== */}
 
               <p className="relative mt-7 max-w-[600px] text-base leading-7 text-[#52695c] sm:text-lg">
 
@@ -122,7 +153,9 @@ export default function EnquirySection() {
 
               </p>
 
-              {/* Trust Points */}
+              {/* =========================================
+                  TRUST POINTS
+              ========================================== */}
 
               <div className="relative mt-10 grid max-w-[650px] grid-cols-1 gap-5 sm:grid-cols-3">
 
@@ -146,7 +179,9 @@ export default function EnquirySection() {
 
               </div>
 
-              {/* Architecture */}
+              {/* =========================================
+                  ARCHITECTURE DECORATION
+              ========================================== */}
 
               <div className="pointer-events-none absolute bottom-0 left-0 flex items-end gap-1 opacity-[0.07]">
 
@@ -161,15 +196,21 @@ export default function EnquirySection() {
 
             </div>
 
-            {/* ================= RIGHT FORM ================= */}
+            {/* ===============================================
+                RIGHT FORM
+            ================================================ */}
 
             <div className="relative flex items-center bg-[#075a38] p-5 sm:p-8 lg:p-12">
 
+              {/* Gold glow */}
               <div className="pointer-events-none absolute -right-20 -top-20 h-64 w-64 rounded-full bg-[#d9a52b]/20 blur-[80px]" />
 
+              {/* Form card */}
               <div className="relative w-full overflow-hidden rounded-[30px] bg-white shadow-[0_25px_80px_rgba(0,0,0,0.18)]">
 
-                {/* Form Header */}
+                {/* =========================================
+                    FORM HEADER
+                ========================================== */}
 
                 <div className="relative overflow-hidden bg-[#075a38] px-7 py-8 sm:px-10">
 
@@ -201,13 +242,16 @@ export default function EnquirySection() {
 
                 </div>
 
-                {/* FORM */}
+                {/* =========================================
+                    FORM
+                ========================================== */}
 
                 <form
                   onSubmit={handleSubmit}
                   className="space-y-4 px-7 py-8 sm:px-10 sm:py-10"
                 >
 
+                  {/* Name + Email */}
                   <div className="grid gap-4 sm:grid-cols-2">
 
                     <InputField
@@ -228,6 +272,7 @@ export default function EnquirySection() {
 
                   </div>
 
+                  {/* Phone */}
                   <InputField
                     label="Phone Number"
                     name="phone"
@@ -236,7 +281,9 @@ export default function EnquirySection() {
                     required
                   />
 
-                  {/* Inquiry */}
+                  {/* =======================================
+                      INQUIRY TYPE
+                  ======================================== */}
 
                   <div>
 
@@ -279,7 +326,9 @@ export default function EnquirySection() {
 
                   </div>
 
-                  {/* Message */}
+                  {/* =======================================
+                      MESSAGE
+                  ======================================== */}
 
                   <div>
 
@@ -296,7 +345,9 @@ export default function EnquirySection() {
 
                   </div>
 
-                  {/* Submit */}
+                  {/* =======================================
+                      SUBMIT BUTTON
+                  ======================================== */}
 
                   <button
                     type="submit"
@@ -313,7 +364,9 @@ export default function EnquirySection() {
 
                   </button>
 
-                  {/* Security */}
+                  {/* =======================================
+                      SECURITY MESSAGE
+                  ======================================== */}
 
                   <div className="flex items-center justify-center gap-2 pt-2 text-xs text-[#718278]">
 
@@ -337,7 +390,9 @@ export default function EnquirySection() {
 
         </div>
 
-        {/* ================= BOTTOM TRUST STRIP ================= */}
+        {/* ===================================================
+            BOTTOM TRUST STRIP
+        ==================================================== */}
 
         <div className="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 text-xs font-medium uppercase tracking-[0.18em] text-[#557063]">
 
@@ -362,7 +417,6 @@ export default function EnquirySection() {
         </div>
 
       </div>
-
     </section>
   );
 }
@@ -388,6 +442,7 @@ function InputField({
     <div>
 
       <label className="mb-2 block text-xs font-semibold text-[#345347]">
+
         {label}
 
         {required && (
@@ -395,6 +450,7 @@ function InputField({
             *
           </span>
         )}
+
       </label>
 
       <input

@@ -67,15 +67,7 @@ const projects: Project[] = [
       "A premium commercial destination offering an attractive opportunity for businesses and investors.",
     image: "/gulber.png",
   },
-  {
-    id: "07",
-    title: "Faisal Jewels",
-    location: "Islamabad",
-    category: "Commercial",
-    description:
-      "A premium commercial destination offering an attractive opportunity for businesses and investors.",
-    image: "/gulber.png",
-  },
+  
 ];
 
 export default function ProjectShowcaseSection() {
@@ -91,14 +83,12 @@ export default function ProjectShowcaseSection() {
   }, []);
 
   return (
-    <section className="relative w-full overflow-hidden bg-[#11160d] py-24 text-white md:py-32">
-
+    <section className="relative left-1/2 w-screen -translate-x-1/2 overflow-hidden bg-[#11160d] py-24 text-white md:py-32">
       {/* ==============================
           BACKGROUND EFFECTS
       =============================== */}
 
       <div className="pointer-events-none absolute inset-0">
-
         <div className="absolute -left-40 top-20 h-[500px] w-[500px] rounded-full bg-[#31551f]/20 blur-[150px]" />
 
         <div className="absolute -right-40 bottom-0 h-[500px] w-[500px] rounded-full bg-[#d9a52b]/10 blur-[160px]" />
@@ -115,7 +105,6 @@ export default function ProjectShowcaseSection() {
             backgroundSize: "80px 80px",
           }}
         />
-
       </div>
 
       {/* ==============================
@@ -123,15 +112,12 @@ export default function ProjectShowcaseSection() {
       =============================== */}
 
       <div className="relative w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-14">
-
         {/* ==============================
             HEADER
         =============================== */}
 
         <div className="flex flex-col justify-between gap-10 lg:flex-row lg:items-end">
-
           <div className="max-w-4xl">
-
             {/* Label */}
 
             <div
@@ -147,9 +133,7 @@ export default function ProjectShowcaseSection() {
 
               <span className="h-px w-12 bg-[#d9a52b]/40" />
 
-              <span className="text-xs text-white/30">
-                01 — 06
-              </span>
+              <span className="text-xs text-white/30">01 — 07</span>
             </div>
 
             {/* Heading */}
@@ -179,8 +163,8 @@ export default function ProjectShowcaseSection() {
               }`}
             >
               Explore Property Raabta&apos;s collection of residential,
-              commercial and luxury property opportunities across
-              Rawalpindi, Islamabad and surrounding areas.
+              commercial and luxury property opportunities across Rawalpindi,
+              Islamabad and surrounding areas.
             </p>
           </div>
 
@@ -212,13 +196,11 @@ export default function ProjectShowcaseSection() {
               : "translate-y-16 opacity-0"
           }`}
         >
-
           {/* ==============================
               DESKTOP PROJECTS
           =============================== */}
 
           <div className="hidden h-[560px] w-full gap-3 lg:flex">
-
             {projects.map((project, index) => {
               const active = index === activeProject;
 
@@ -227,12 +209,9 @@ export default function ProjectShowcaseSection() {
                   key={project.id}
                   onMouseEnter={() => setActiveProject(index)}
                   className={`group relative cursor-pointer overflow-hidden rounded-[28px] transition-all duration-700 ease-[cubic-bezier(.22,1,.36,1)] ${
-                    active
-                      ? "flex-[4.5]"
-                      : "flex-[1]"
+                    active ? "flex-[4.5]" : "flex-[1]"
                   }`}
                 >
-
                   {/* Image */}
 
                   <Image
@@ -242,9 +221,7 @@ export default function ProjectShowcaseSection() {
                     priority={index === 0}
                     sizes="100vw"
                     className={`object-cover transition-transform duration-[1200ms] ${
-                      active
-                        ? "scale-105"
-                        : "scale-100"
+                      active ? "scale-105" : "scale-100"
                     }`}
                   />
 
@@ -274,13 +251,11 @@ export default function ProjectShowcaseSection() {
 
                   {!active && (
                     <div className="absolute inset-0 flex flex-col items-center justify-between py-7">
-
                       <span className="text-xs font-medium text-white/40">
                         {project.id}
                       </span>
 
                       <div className="flex items-center gap-3">
-
                         <span className="h-8 w-px bg-[#d9a52b]" />
 
                         <h3
@@ -292,7 +267,6 @@ export default function ProjectShowcaseSection() {
                         >
                           {project.title}
                         </h3>
-
                       </div>
 
                       <span
@@ -312,19 +286,14 @@ export default function ProjectShowcaseSection() {
 
                   {active && (
                     <div className="absolute inset-x-0 bottom-0 p-7 md:p-9">
-
                       {/* Location */}
 
                       <div className="mb-4 flex items-center gap-2">
-
-                        <span className="text-[#d9a52b]">
-                          ●
-                        </span>
+                        <span className="text-[#d9a52b]">●</span>
 
                         <span className="text-xs font-semibold uppercase tracking-[0.18em] text-white/80">
                           {project.location}
                         </span>
-
                       </div>
 
                       {/* Divider */}
@@ -332,9 +301,7 @@ export default function ProjectShowcaseSection() {
                       <div className="mb-5 h-px w-full bg-white/20" />
 
                       <div className="flex items-end justify-between gap-6">
-
                         <div>
-
                           <p className="mb-2 text-[10px] uppercase tracking-[0.3em] text-[#d9a52b]">
                             {project.category}
                           </p>
@@ -346,25 +313,20 @@ export default function ProjectShowcaseSection() {
                           <p className="mt-4 max-w-xl text-sm leading-6 text-white/55">
                             {project.description}
                           </p>
-
                         </div>
 
                         {/* Explore */}
 
                         <button className="group hidden shrink-0 items-center gap-3 rounded-full bg-white py-2 pl-5 pr-2 text-xs font-semibold text-black md:flex">
-
                           Explore
 
                           <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#d9a52b] text-base transition-transform duration-500 group-hover:rotate-45">
                             ↗
                           </span>
-
                         </button>
-
                       </div>
                     </div>
                   )}
-
                 </div>
               );
             })}
@@ -375,13 +337,11 @@ export default function ProjectShowcaseSection() {
           =============================== */}
 
           <div className="flex gap-4 overflow-x-auto pb-5 lg:hidden">
-
             {projects.map((project) => (
               <div
                 key={project.id}
                 className="relative h-[480px] min-w-[300px] overflow-hidden rounded-[28px]"
               >
-
                 <Image
                   src={project.image}
                   alt={project.title}
@@ -393,17 +353,12 @@ export default function ProjectShowcaseSection() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
 
                 <div className="absolute inset-x-0 bottom-0 p-6">
-
                   <div className="mb-3 flex items-center gap-2">
-
-                    <span className="text-[#d9a52b]">
-                      ●
-                    </span>
+                    <span className="text-[#d9a52b]">●</span>
 
                     <span className="text-[10px] uppercase tracking-[0.2em] text-white/70">
                       {project.location}
                     </span>
-
                   </div>
 
                   <p className="text-[10px] uppercase tracking-[0.25em] text-[#d9a52b]">
@@ -417,18 +372,12 @@ export default function ProjectShowcaseSection() {
                   <button className="mt-5 flex items-center gap-3 rounded-full bg-white px-5 py-2.5 text-xs font-semibold text-black">
                     Explore Project
 
-                    <span className="text-[#d9a52b]">
-                      ↗
-                    </span>
+                    <span className="text-[#d9a52b]">↗</span>
                   </button>
-
                 </div>
-
               </div>
             ))}
-
           </div>
-
         </div>
 
         {/* ==============================
@@ -442,37 +391,27 @@ export default function ProjectShowcaseSection() {
               : "translate-y-8 opacity-0"
           }`}
         >
-
           <div className="flex items-center gap-4">
-
             <div className="flex h-11 w-11 items-center justify-center rounded-full border border-[#d9a52b]/40 text-xl text-[#d9a52b]">
               ◇
             </div>
 
             <div>
-
-              <p className="text-sm font-medium">
-                Property Raabta
-              </p>
+              <p className="text-sm font-medium">Property Raabta</p>
 
               <p className="mt-1 text-xs text-white/35">
                 Real Estate for Rawalpindi & Islamabad
               </p>
-
             </div>
           </div>
 
           <div className="flex flex-wrap gap-6 text-[10px] uppercase tracking-[0.2em] text-white/30">
-
             <span>Residential</span>
             <span>Commercial</span>
             <span>Luxury</span>
             <span>Investment</span>
-
           </div>
-
         </div>
-
       </div>
     </section>
   );

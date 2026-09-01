@@ -256,16 +256,21 @@
   }
 
   html,
-  body {
-    overflow-x: hidden;
-  }
+body {
+  width: 100%;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
 
-  body {
-    @apply bg-background text-foreground;
-    font-feature-settings:
-      "rlig"1,
-      "calt"1;
-  }
+body {
+  background: #ffffff;
+  color: #111111;
+  font-feature-settings:
+    "rlig" 1,
+    "calt" 1;
+}
 }
 
 .card {
@@ -665,4 +670,12 @@
   border: 1px solid hsl(var(--border));
   margin: 1.5rem auto;
   display: block;
+}
+html,
+body {
+  background-color: #ffffff !important;
+}
+
+body {
+  color: #111111;
 }

@@ -4,25 +4,24 @@ import Link from "next/link";
 
 export function PropertyRaabtaHero() {
   return (
-    <section className="relative min-h-[720px] overflow-hidden bg-[#063d26]">
+    <section className="relative left-1/2 min-h-[720px] w-screen -translate-x-1/2 overflow-hidden bg-[#063d26]">
       {/* Background Image */}
       <div
-        className="absolute inset-0 bg-cover bg-center"
+        className="absolute inset-0 w-full bg-cover bg-center"
         style={{
-          backgroundImage: "url('/property-raabta-hero.png')"
+          backgroundImage: "url('/property-raabta-hero.png')",
         }}
       />
 
-      {/* Dark overlay for readable content */}
+      {/* Dark overlay */}
       <div className="absolute inset-0 bg-[#032d1d]/35" />
 
       {/* Subtle gradient */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#032d1d]/55 via-transparent to-[#032d1d]/25" />
 
       {/* Content */}
-      <div className="relative z-10 mx-auto flex min-h-[720px] max-w-7xl items-center px-6 py-24 sm:px-8 lg:px-12">
+      <div className="relative z-10 mx-auto flex min-h-[720px] w-full max-w-7xl items-center px-6 py-24 sm:px-8 lg:px-12">
         <div className="max-w-3xl">
-
           {/* Small label */}
           <div className="mb-6 inline-flex items-center gap-3 rounded-full border border-[#d8aa37]/60 bg-[#063d26]/70 px-5 py-2 backdrop-blur-md">
             <span className="h-2 w-2 rounded-full bg-[#d8aa37]" />
@@ -48,7 +47,6 @@ export function PropertyRaabtaHero() {
 
           {/* Buttons */}
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
-
             <Link
               href="/projects"
               className="group inline-flex items-center justify-center gap-3 rounded-xl bg-[#d8aa37] px-7 py-4 text-sm font-bold text-[#063d26] shadow-lg transition-all duration-300 hover:-translate-y-1 hover:bg-[#e7bb4d] hover:shadow-xl"
@@ -66,12 +64,10 @@ export function PropertyRaabtaHero() {
             >
               Talk to an Expert
             </Link>
-
           </div>
 
           {/* Trust indicators */}
           <div className="mt-12 flex flex-wrap gap-x-8 gap-y-5 border-t border-white/20 pt-7">
-
             <div>
               <p className="text-2xl font-bold text-[#d8aa37]">100+</p>
               <p className="mt-1 text-xs uppercase tracking-wider text-white/70">
@@ -96,7 +92,6 @@ export function PropertyRaabtaHero() {
                 Trusted Guidance
               </p>
             </div>
-
           </div>
         </div>
       </div>

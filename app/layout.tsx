@@ -147,12 +147,19 @@ export default function RootLayout({
           <MainNav />
 
           {/* ================= PAGE CONTENT ================= */}
-          <main>
-            {children}
-          </main>
+          <main
+  style={{
+    width: "100%",
+    maxWidth: "none",
+    margin: 0,
+    padding: 0,
+  }}
+>
+  {children}
+</main>
 
           {/* ================= FOOTER ================= */}
-          <SiteFooter />
+          
 
           {/* ================= GLOBAL COMPONENTS ================= */}
           <Analytics />

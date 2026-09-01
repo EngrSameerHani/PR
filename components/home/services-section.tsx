@@ -77,23 +77,31 @@ export default function ServicesSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative overflow-hidden bg-[#f3faef] py-24 md:py-32"
+      className="relative w-full overflow-hidden bg-[#f3faef] py-24 md:py-32"
     >
-      {/* Decorative background */}
+      {/* =========================================================
+          DECORATIVE BACKGROUND
+      ========================================================= */}
+
       <div className="pointer-events-none absolute left-0 top-0 h-32 w-72 rounded-br-[90px] bg-[#084b2c]" />
 
       <div className="pointer-events-none absolute right-[-120px] top-[-120px] h-[400px] w-[400px] rounded-full border border-[#4b9b67]/10" />
 
       <div className="pointer-events-none absolute bottom-[-180px] right-[-100px] h-[450px] w-[450px] rounded-full border border-[#4b9b67]/10" />
 
-      <div className="container relative">
+      {/* =========================================================
+          FULL-WIDTH CONTENT
+      ========================================================= */}
 
-        {/* =========================
+      <div className="relative w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-14 2xl:px-16">
+
+        {/* =======================================================
             HEADER
-        ========================= */}
+        ======================================================= */}
 
         <div className="text-center">
 
+          {/* Small heading */}
           <div
             className={`flex items-center justify-center gap-4 transition-all duration-700 ${
               isVisible
@@ -110,19 +118,19 @@ export default function ServicesSection() {
             <span className="h-px w-12 bg-[#167044]" />
           </div>
 
+          {/* Main heading */}
           <h2
-            className={`mt-5 text-5xl font-semibold tracking-[-0.045em] text-[#081c12] transition-all duration-700 delay-100 sm:text-6xl lg:text-7xl ${
+            className={`mx-auto mt-5 max-w-5xl text-5xl font-semibold tracking-[-0.045em] text-[#081c12] transition-all duration-700 delay-100 sm:text-6xl lg:text-7xl ${
               isVisible
                 ? "translate-y-0 opacity-100"
                 : "translate-y-10 opacity-0"
             }`}
           >
             Our Signature{" "}
-            <span className="text-[#14613b]">
-              Services
-            </span>
+            <span className="text-[#14613b]">Services</span>
           </h2>
 
+          {/* Description */}
           <p
             className={`mx-auto mt-5 max-w-2xl text-base leading-7 text-gray-600 transition-all duration-700 delay-200 md:text-lg ${
               isVisible
@@ -134,6 +142,7 @@ export default function ServicesSection() {
             simpler and better property journey.
           </p>
 
+          {/* Green underline */}
           <div
             className={`mx-auto mt-6 h-1 rounded-full bg-[#197542] transition-all duration-700 delay-300 ${
               isVisible ? "w-14" : "w-0"
@@ -141,15 +150,15 @@ export default function ServicesSection() {
           />
         </div>
 
-        {/* =========================
+        {/* =======================================================
             SERVICES AREA
-        ========================= */}
+        ======================================================= */}
 
         <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-[0.72fr_1.28fr]">
 
-          {/* =========================
+          {/* =====================================================
               LARGE PROPERTY IMAGE
-          ========================= */}
+          ===================================================== */}
 
           <div
             className={`relative hidden min-h-[720px] overflow-hidden rounded-[30px] transition-all duration-1000 lg:block ${
@@ -163,6 +172,7 @@ export default function ServicesSection() {
               alt="Property Raabta real estate"
               fill
               priority
+              sizes="(max-width: 1024px) 0vw, 40vw"
               className="object-cover transition-transform duration-1000 hover:scale-105"
             />
 
@@ -176,6 +186,7 @@ export default function ServicesSection() {
 
             {/* Image text */}
             <div className="absolute bottom-8 left-8 right-8 text-white">
+
               <div className="mb-4 h-px w-12 bg-[#d9a52b]" />
 
               <p className="text-xs uppercase tracking-[0.3em] text-white/70">
@@ -192,12 +203,13 @@ export default function ServicesSection() {
                 Helping you make confident property decisions
                 across Pakistan's twin cities.
               </p>
+
             </div>
           </div>
 
-          {/* =========================
+          {/* =====================================================
               SERVICE CARDS
-          ========================= */}
+          ===================================================== */}
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
 
@@ -219,10 +231,13 @@ export default function ServicesSection() {
                     transitionDelay: `${400 + index * 150}ms`,
                   }}
                 >
+
                   {/* Card content */}
                   <div className="flex w-[58%] flex-col justify-between p-6 md:p-7">
 
                     <div>
+
+                      {/* Icon + Title */}
                       <div className="flex items-start gap-3">
 
                         {/* Icon */}
@@ -230,6 +245,7 @@ export default function ServicesSection() {
                           {service.icon}
                         </div>
 
+                        {/* Number + Title */}
                         <div>
                           <p className="text-[10px] font-semibold tracking-[0.15em] text-[#32805a]">
                             {service.number}
@@ -242,26 +258,33 @@ export default function ServicesSection() {
 
                       </div>
 
+                      {/* Description */}
                       <p className="mt-5 text-sm leading-6 text-gray-500">
                         {service.description}
                       </p>
+
                     </div>
 
                     {/* Arrow */}
                     <div className="flex h-9 w-9 items-center justify-center rounded-full bg-[#07502d] text-lg text-white transition-all duration-500 group-hover:translate-x-2 group-hover:bg-[#d9a52b]">
                       →
                     </div>
+
                   </div>
 
                   {/* Card image */}
                   <div className="relative w-[42%] overflow-hidden">
+
                     <Image
                       src="/gulber.png"
                       alt={service.title}
                       fill
+                      sizes="(max-width: 640px) 42vw, (max-width: 1024px) 21vw, 13vw"
                       className="object-cover transition-transform duration-700 group-hover:scale-110"
                     />
+
                   </div>
+
                 </div>
               );
             })}
@@ -269,9 +292,9 @@ export default function ServicesSection() {
           </div>
         </div>
 
-        {/* =========================
+        {/* =======================================================
             CTA
-        ========================= */}
+        ======================================================= */}
 
         <div
           className={`mt-10 overflow-hidden rounded-[28px] bg-[#07502d] transition-all duration-1000 ${
@@ -283,14 +306,18 @@ export default function ServicesSection() {
             transitionDelay: "1400ms",
           }}
         >
+
           <div className="flex flex-col gap-7 px-8 py-8 md:flex-row md:items-center md:justify-between md:px-12 md:py-9">
 
+            {/* CTA content */}
             <div className="flex items-center gap-5">
 
+              {/* Icon */}
               <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full border border-[#d9a52b]/50 text-2xl text-[#d9a52b]">
                 ◇
               </div>
 
+              {/* Text */}
               <div>
                 <h3 className="text-xl font-semibold text-white md:text-2xl">
                   Your Trusted Partner in Real Estate
@@ -307,7 +334,11 @@ export default function ServicesSection() {
 
             </div>
 
-            <button className="group flex items-center justify-center gap-4 rounded-full bg-[#d9f5c8] px-7 py-4 font-semibold text-[#07502d] transition-all duration-300 hover:scale-105 hover:bg-white">
+            {/* CTA button */}
+            <button
+              type="button"
+              className="group flex items-center justify-center gap-4 rounded-full bg-[#d9f5c8] px-7 py-4 font-semibold text-[#07502d] transition-all duration-300 hover:scale-105 hover:bg-white"
+            >
               Get in Touch
 
               <span className="transition-transform duration-300 group-hover:translate-x-1">

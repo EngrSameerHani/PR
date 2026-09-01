@@ -86,32 +86,48 @@ export default function ReviewsSection() {
   const [activeIndex, setActiveIndex] = useState(1);
   const [paused, setPaused] = useState(false);
 
-  /*
-   * Automatic slider
-   */
+  /* =========================================================
+     AUTOMATIC SLIDER
+  ========================================================= */
+
   useEffect(() => {
     if (paused) return;
 
     const timer = setInterval(() => {
-      setActiveIndex((current) => (current + 1) % reviews.length);
+      setActiveIndex(
+        (current) => (current + 1) % reviews.length
+      );
     }, 4000);
 
     return () => clearInterval(timer);
   }, [paused]);
 
-  const nextReview = () => {
-    setActiveIndex((current) => (current + 1) % reviews.length);
-  };
+  /* =========================================================
+     NEXT REVIEW
+  ========================================================= */
 
-  const previousReview = () => {
-    setActiveIndex((current) =>
-      current === 0 ? reviews.length - 1 : current - 1
+  const nextReview = () => {
+    setActiveIndex(
+      (current) => (current + 1) % reviews.length
     );
   };
 
-  /*
-   * Calculate card position
-   */
+  /* =========================================================
+     PREVIOUS REVIEW
+  ========================================================= */
+
+  const previousReview = () => {
+    setActiveIndex((current) =>
+      current === 0
+        ? reviews.length - 1
+        : current - 1
+    );
+  };
+
+  /* =========================================================
+     CALCULATE CARD POSITION
+  ========================================================= */
+
   const getPosition = (index: number) => {
     let position = index - activeIndex;
 
@@ -133,38 +149,39 @@ export default function ReviewsSection() {
       onMouseLeave={() => setPaused(false)}
     >
       {/* =====================================================
-          BACKGROUND
+          BACKGROUND DECORATION
       ====================================================== */}
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
 
         {/* Green corner */}
-
         <div className="absolute -left-24 -top-32 h-72 w-[520px] rounded-br-[260px] bg-[#075a38]" />
 
         {/* Gold curved line */}
-
         <div className="absolute -left-12 -top-24 h-64 w-[500px] rounded-br-[260px] border-b-[5px] border-[#d9a52b]" />
 
         {/* Soft center glow */}
-
         <div className="absolute left-1/2 top-1/2 h-[600px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#cceecb]/50 blur-[140px]" />
 
         {/* Right decorative buildings */}
-
         <div className="absolute right-0 top-0 hidden h-[390px] w-[350px] opacity-[0.055] md:block">
+
           <div className="absolute bottom-0 right-5 h-[280px] w-14 rounded-t bg-[#075a38]" />
+
           <div className="absolute bottom-0 right-24 h-[350px] w-16 rounded-t bg-[#075a38]" />
+
           <div className="absolute bottom-0 right-48 h-[230px] w-14 rounded-t bg-[#075a38]" />
+
           <div className="absolute bottom-0 right-72 h-[300px] w-11 rounded-t bg-[#075a38]" />
+
         </div>
       </div>
 
       {/* =====================================================
-          MAIN CONTENT
+          FULL-WIDTH CONTENT
       ====================================================== */}
 
-      <div className="relative w-full px-5 sm:px-8 lg:px-12 xl:px-16">
+      <div className="relative w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-14 2xl:px-16">
 
         {/* ===================================================
             HEADER
@@ -172,7 +189,9 @@ export default function ReviewsSection() {
 
         <div className="mx-auto max-w-5xl text-center">
 
+          {/* Small label */}
           <div className="mb-5 flex items-center justify-center gap-5">
+
             <span className="h-px w-16 bg-[#075a38]/50" />
 
             <span className="text-[10px] font-semibold uppercase tracking-[0.4em] text-[#075a38]">
@@ -180,12 +199,15 @@ export default function ReviewsSection() {
             </span>
 
             <span className="h-px w-16 bg-[#075a38]/50" />
+
           </div>
 
+          {/* Home icon */}
           <div className="mb-3 text-4xl text-[#075a38]">
             ⌂
           </div>
 
+          {/* Heading */}
           <h2 className="font-serif text-5xl font-semibold leading-[0.95] tracking-[-0.04em] text-[#0b3927] sm:text-6xl md:text-7xl">
             What Our Clients
             <br />
@@ -195,8 +217,10 @@ export default function ReviewsSection() {
             </span>
           </h2>
 
+          {/* Underline */}
           <div className="mx-auto mt-7 h-1.5 w-20 rounded-full bg-[#278c45]" />
 
+          {/* Description */}
           <p className="mx-auto mt-6 max-w-3xl text-base leading-7 text-[#435d50] md:text-lg">
             Real experiences from people who trusted Property Raabta
             for their real estate journey across Rawalpindi and Islamabad.
@@ -207,10 +231,9 @@ export default function ReviewsSection() {
             SLIDER
         ==================================================== */}
 
-        <div className="relative mx-auto mt-16 max-w-[1450px]">
+        <div className="relative mt-16 w-full">
 
-          {/* Previous */}
-
+          {/* Previous button */}
           <button
             type="button"
             onClick={previousReview}
@@ -220,8 +243,7 @@ export default function ReviewsSection() {
             ‹
           </button>
 
-          {/* Next */}
-
+          {/* Next button */}
           <button
             type="button"
             onClick={nextReview}
@@ -231,7 +253,9 @@ export default function ReviewsSection() {
             ›
           </button>
 
-          {/* Cards */}
+          {/* =================================================
+              REVIEW CARDS
+          ================================================= */}
 
           <div className="relative mx-auto h-[470px] w-full overflow-hidden">
 
@@ -257,8 +281,8 @@ export default function ReviewsSection() {
                       Math.abs(position) === 2
                         ? 0.2
                         : isActive
-                        ? 1
-                        : 0.65,
+                          ? 1
+                          : 0.65,
                     zIndex: isActive
                       ? 30
                       : 20 - Math.abs(position),
@@ -271,6 +295,7 @@ export default function ReviewsSection() {
                 </div>
               );
             })}
+
           </div>
         </div>
 
@@ -279,10 +304,12 @@ export default function ReviewsSection() {
         ==================================================== */}
 
         <div className="mt-2 flex justify-center gap-4 lg:hidden">
+
           <button
             type="button"
             onClick={previousReview}
-            className="flex h-12 w-12 items-center justify-center rounded-full bg-[#075a38] text-2xl text-white shadow-lg"
+            aria-label="Previous review"
+            className="flex h-12 w-12 items-center justify-center rounded-full bg-[#075a38] text-2xl text-white shadow-lg transition-transform duration-300 hover:scale-110"
           >
             ‹
           </button>
@@ -290,10 +317,12 @@ export default function ReviewsSection() {
           <button
             type="button"
             onClick={nextReview}
-            className="flex h-12 w-12 items-center justify-center rounded-full bg-[#075a38] text-2xl text-white shadow-lg"
+            aria-label="Next review"
+            className="flex h-12 w-12 items-center justify-center rounded-full bg-[#075a38] text-2xl text-white shadow-lg transition-transform duration-300 hover:scale-110"
           >
             ›
           </button>
+
         </div>
 
         {/* ===================================================
@@ -301,6 +330,7 @@ export default function ReviewsSection() {
         ==================================================== */}
 
         <div className="mt-8 flex justify-center gap-2">
+
           {reviews.map((_, index) => (
             <button
               key={index}
@@ -314,13 +344,14 @@ export default function ReviewsSection() {
               }`}
             />
           ))}
+
         </div>
 
         {/* ===================================================
             TRUST FEATURES
         ==================================================== */}
 
-        <div className="mx-auto mt-14 grid max-w-[1450px] grid-cols-1 overflow-hidden rounded-[28px] bg-[#e7f5e3] md:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-14 grid w-full grid-cols-1 overflow-hidden rounded-[28px] bg-[#e7f5e3] md:grid-cols-2 lg:grid-cols-4">
 
           <TrustItem
             icon="✓"
@@ -345,6 +376,7 @@ export default function ReviewsSection() {
             title="Client Focused"
             description="Your goals, our priority"
           />
+
         </div>
 
         {/* ===================================================
@@ -352,6 +384,7 @@ export default function ReviewsSection() {
         ==================================================== */}
 
         <div className="mt-10 flex justify-center">
+
           <button
             type="button"
             className="group flex items-center gap-5 rounded-full bg-[#075a38] px-8 py-4 text-sm font-semibold text-white shadow-xl transition-all duration-300 hover:-translate-y-1 hover:bg-[#0b7046] hover:shadow-2xl"
@@ -362,7 +395,9 @@ export default function ReviewsSection() {
               →
             </span>
           </button>
+
         </div>
+
       </div>
     </section>
   );
@@ -388,8 +423,7 @@ function ReviewCard({
       }`}
     >
 
-      {/* Featured */}
-
+      {/* Featured badge */}
       {featured && (
         <div className="absolute right-0 top-0 rounded-bl-[22px] bg-[#d9a52b] px-5 py-3 text-sm font-bold text-[#123b27]">
           ★ Featured
@@ -397,7 +431,6 @@ function ReviewCard({
       )}
 
       {/* Quote */}
-
       <div
         className={`font-serif text-7xl leading-none ${
           featured
@@ -409,13 +442,11 @@ function ReviewCard({
       </div>
 
       {/* Stars */}
-
       <div className="mt-1 flex gap-1 text-xl text-[#d9a52b]">
         ★ ★ ★ ★ ★
       </div>
 
       {/* Review text */}
-
       <p
         className={`mt-5 text-[15px] leading-7 md:text-base ${
           featured
@@ -427,7 +458,6 @@ function ReviewCard({
       </p>
 
       {/* Divider */}
-
       <div
         className={`my-6 h-px ${
           featured
@@ -437,9 +467,9 @@ function ReviewCard({
       />
 
       {/* User */}
-
       <div className="flex items-center gap-4">
 
+        {/* Avatar */}
         <div
           className={`flex h-14 w-14 shrink-0 items-center justify-center rounded-full text-xl font-bold ${
             featured
@@ -450,7 +480,9 @@ function ReviewCard({
           {review.name.charAt(0)}
         </div>
 
+        {/* User information */}
         <div>
+
           <h3
             className={`font-semibold ${
               featured
@@ -480,11 +512,12 @@ function ReviewCard({
           >
             📍 {review.location}
           </p>
+
         </div>
+
       </div>
 
       {/* Bottom accent */}
-
       <div
         className={`absolute bottom-0 left-1/2 h-1 -translate-x-1/2 rounded-full transition-all duration-500 ${
           featured
@@ -492,6 +525,7 @@ function ReviewCard({
             : "w-12 bg-[#278c45]"
         }`}
       />
+
     </div>
   );
 }
@@ -512,11 +546,14 @@ function TrustItem({
   return (
     <div className="group flex items-center gap-4 border-b border-[#c9e5ce] px-7 py-6 transition-colors duration-300 hover:bg-white/50 md:border-r lg:border-b-0">
 
+      {/* Icon */}
       <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-white text-2xl text-[#075a38] shadow-sm transition-transform duration-300 group-hover:scale-110">
         {icon}
       </div>
 
+      {/* Text */}
       <div>
+
         <h3 className="font-semibold text-[#123b27]">
           {title}
         </h3>
@@ -524,6 +561,7 @@ function TrustItem({
         <p className="mt-1 text-sm text-[#607568]">
           {description}
         </p>
+
       </div>
 
     </div>

@@ -14,45 +14,45 @@ type NewProject = {
 const newProjects: NewProject[] = [
   {
     id: "01",
-    title: "The Sultan B-17 Islamabad",
+    title: "Al Ghurair Giga",
     location: "Islamabad",
     status: "UNDER DEVELOPMENT",
-    image: "/sultan-b17.jpg",
+    image: "/gulber.png",
   },
   {
     id: "02",
-    title: "The Sultan Hotels & Resorts – Galiyat",
-    location: "Galiyat",
+    title: "Imarat",
+    location: "Islamabad",
     status: "UNDER DEVELOPMENT",
-    image: "/sultan-galiyat.jpg",
+    image: "/gulber.png",
   },
   {
     id: "03",
-    title: "The Sultan – Bahria Town",
+    title: "Mumtaz City",
     location: "Islamabad",
     status: "UNDER DEVELOPMENT",
-    image: "/sultan-bahria.jpg",
+    image: "/gulber.png",
   },
   {
     id: "04",
-    title: "The Sultan Restaurant",
+    title: "Premier Choice International",
     location: "Islamabad",
     status: "UNDER DEVELOPMENT",
-    image: "/sultan-restaurant.jpg",
+    image: "/gulber.png",
   },
   {
     id: "05",
-    title: "The Sultan Town",
-    location: "Islamabad",
+    title: "Silver City",
+    location: "Rawalpindi",
     status: "UNDER DEVELOPMENT",
-    image: "/sultan-town.jpg",
+    image: "/gulber.png",
   },
   {
     id: "06",
-    title: "Silver City Housing Scheme",
-    location: "Rawalpindi",
+    title: "Faisal Jewels",
+    location: "Islamabad",
     status: "UNDER DEVELOPMENT",
-    image: "/silver-city.jpg",
+    image: "/gulber.png",
   },
 ];
 
@@ -102,7 +102,6 @@ export default function NewProjectsSection() {
       =============================== */}
 
       <div className="relative mx-auto w-full max-w-[1400px] px-5 sm:px-7 lg:px-10">
-
         {/* ==============================
             SECTION HEADER
         =============================== */}
@@ -131,15 +130,13 @@ export default function NewProjectsSection() {
 
             <h2 className="max-w-3xl text-4xl font-semibold leading-[1.05] tracking-[-0.04em] text-[#171717] sm:text-5xl md:text-6xl">
               Projects under{" "}
-              <span className="text-[#c69220]">
-                development.
-              </span>
+              <span className="text-[#c69220]">development.</span>
             </h2>
 
             <p className="mt-5 max-w-2xl text-sm leading-7 text-black/55 md:text-base">
-              Explore our latest developments and upcoming projects
-              designed to create exceptional opportunities for living,
-              business and investment.
+              Explore our latest developments and upcoming projects designed
+              to create exceptional opportunities for living, business and
+              investment.
             </p>
           </div>
 
@@ -165,7 +162,6 @@ export default function NewProjectsSection() {
         =============================== */}
 
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-
           {newProjects.map((project, index) => (
             <div
               key={project.id}
@@ -192,7 +188,6 @@ export default function NewProjectsSection() {
                 transitionDelay: `${index * 100}ms`,
               }}
             >
-
               {/* ==============================
                   PROJECT IMAGE
               =============================== */}
@@ -306,7 +301,6 @@ export default function NewProjectsSection() {
                   sm:p-7
                 "
               >
-
                 {/* Location */}
 
                 <div
@@ -366,7 +360,6 @@ export default function NewProjectsSection() {
                 {/* Title + Arrow */}
 
                 <div className="flex items-end justify-between gap-4">
-
                   <h3
                     className="
                       max-w-[85%]
@@ -427,7 +420,6 @@ export default function NewProjectsSection() {
                       />
                     </svg>
                   </div>
-
                 </div>
 
                 {/* Hidden hover line */}
@@ -443,7 +435,6 @@ export default function NewProjectsSection() {
                     group-hover:w-16
                   "
                 />
-
               </div>
 
               {/* ==============================
@@ -463,10 +454,8 @@ export default function NewProjectsSection() {
                   group-hover:border-[#e0a526]/60
                 "
               />
-
             </div>
           ))}
-
         </div>
 
         {/* ==============================
@@ -497,7 +486,6 @@ export default function NewProjectsSection() {
 
           <div className="h-px flex-1 bg-black/10" />
         </div>
-
       </div>
     </section>
   );

@@ -48,7 +48,6 @@ export default function IndexPage() {
       {/* Enquiry */}
       <EnquirySection />
 
-      {/* Footer - LAST SECTION */}
       
     </ClientPageWrapper>
   );

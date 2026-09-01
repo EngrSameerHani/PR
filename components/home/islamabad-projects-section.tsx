@@ -226,7 +226,7 @@ export default function IslamabadProjectsSection() {
 
   /* =======================================================
      DISPLAY PROJECTS
-     
+
      showAllProjects = false
        => first 8 projects
 
@@ -240,7 +240,7 @@ export default function IslamabadProjectsSection() {
 
   /* =======================================================
      FILTER HANDLER
-     
+
      When user changes category, go back to first 8.
   ======================================================= */
 
@@ -267,7 +267,6 @@ export default function IslamabadProjectsSection() {
       ====================================================== */}
 
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-
         {/* Top left green shape */}
         <div className="absolute left-0 top-0 h-[150px] w-[360px] rounded-br-[180px] bg-[#073b27]" />
 
@@ -299,8 +298,7 @@ export default function IslamabadProjectsSection() {
           MAIN CONTENT
       ====================================================== */}
 
-      <div className="relative w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-14">
-
+      <div className="relative w-full px-4 sm:px-6 md:px-8 lg:px-10 xl:px-14 2xl:px-16">
         {/* ===================================================
             HEADER
         ==================================================== */}
@@ -360,7 +358,6 @@ export default function IslamabadProjectsSection() {
           }`}
         >
           <div className="flex max-w-full gap-2 overflow-x-auto rounded-full border border-[#d4e3d7] bg-white/80 p-1.5 shadow-[0_10px_40px_rgba(20,70,40,0.07)] backdrop-blur-md">
-
             {filters.map((filter) => {
               const active = activeFilter === filter;
 
@@ -399,7 +396,7 @@ export default function IslamabadProjectsSection() {
         ==================================================== */}
 
         <div
-          className={`mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4 transition-all duration-500`}
+          className={`mt-10 grid grid-cols-1 gap-5 transition-all duration-500 sm:grid-cols-2 lg:grid-cols-4`}
         >
           {visibleProjects.map((project, index) => (
             <ProjectCard
@@ -547,7 +544,6 @@ function ProjectCard({
       ====================================================== */}
 
       <div className="absolute inset-x-0 bottom-0 p-5">
-
         {/* LOCATION */}
 
         <div className="mb-2 flex items-center gap-1.5 text-[10px] text-white/75">
@@ -567,7 +563,6 @@ function ProjectCard({
         {/* BOTTOM */}
 
         <div className="mt-4 flex items-center justify-between">
-
           <span className="text-[9px] uppercase tracking-[0.2em] text-white/45">
             Property Raabta
           </span>
