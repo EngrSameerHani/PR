@@ -77,7 +77,7 @@ export const skillsUnsorted: skillsInterface[] = [
     description:
       "Configure and customize WordPress plugins to extend website functionality and meet business requirements.",
     rating: 4,
-    icon: Icons.wordpress || Icons.html5,
+    icon: Icons.html5,
   },
 
   {
@@ -121,10 +121,8 @@ export const skillsUnsorted: skillsInterface[] = [
   },
 ];
 
-
 export const skills = skillsUnsorted
   .slice()
   .sort((a, b) => b.rating - a.rating);
-
 
 export const featuredSkills = skills.slice(0, 6);
