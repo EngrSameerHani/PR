@@ -1,70 +1,132 @@
+
+// /config/constants.ts
+
+/**
+ * Valid skills used throughout the portfolio.
+ */
 export type ValidSkills =
+  // Frontend
   | "Next.js"
   | "React"
-  | "GraphQL"
-  | "Nest.js"
-  | "express.js"
-  | "Node.js"
-  | "MongoDB"
-  | "TypeScript"
-  | "JavaScript"
+  | "Angular"
+  | "Vue.js"
+  | "React Native"
+  | "Redux"
   | "HTML 5"
   | "CSS 3"
-  | "React Native"
-  | "Angular"
-  | "Redux"
-  | "Socket.io"
-  | "Material UI"
-  | "Tailwind CSS"
-  | "AWS"
-  | "Bootstrap"
-  | "Google Auth"
-  | "MySQL"
-  | "Java"
-  | "Databricks"
-  | "Python"
-  | "Docker"
-  | "Kubernetes"
-  | "PostgreSQL"
-  | "Redis"
-  | "Git"
-  | "CI/CD"
-  | "Jenkins"
+  | "Sass"
+  | "JavaScript"
+  | "TypeScript"
+
+  // Backend
+  | "Node.js"
+  | "express.js"
+  | "Nest.js"
   | "FastAPI"
   | "Django"
-  | "Vue.js"
-  | "Sass"
-  | "Firebase"
-  | "Azure"
-  | "Google Cloud"
-  | "Figma"
-  | "Webpack"
-  | "Jest"
-  | "Cypress"
-  | "Storybook"
-  | "Prisma"
-  | "Supabase"
-  | "Vercel"
-  | "Netlify"
-  | "Three.js"
-  | "WebGL"
-  | "TensorFlow"
-  | "PyTorch"
+  | "Flask"
   | "Spring Boot"
   | "Laravel"
   | "PHP"
-  | "Flutter"
-  | "Dart"
-  | "Flask"
+
+  // Databases
+  | "MongoDB"
+  | "MySQL"
+  | "PostgreSQL"
+  | "Redis"
   | "SQL"
   | "NoSQL"
-  | "Framer Motion"
+  | "Prisma"
+  | "Supabase"
+  | "Firebase"
+
+  // Cloud / DevOps
+  | "AWS"
+  | "Azure"
+  | "Google Cloud"
+  | "Docker"
+  | "Kubernetes"
+  | "Git"
+  | "CI/CD"
+  | "Jenkins"
+  | "Vercel"
+  | "Netlify"
+
+  // APIs / Authentication / Realtime
+  | "GraphQL"
+  | "Socket.io"
+  | "Google Auth"
+  | "REST API"
 
   // CMS & E-commerce
   | "Shopify"
   | "WordPress"
   | "Liquid"
 
-  // Design & Marketing
+  // AI / Data / ML
+  | "Python"
+  | "TensorFlow"
+  | "PyTorch"
+  | "Databricks"
+
+  // Mobile
+  | "Flutter"
+  | "Dart"
+
+  // UI / Design
+  | "Material UI"
+  | "Tailwind CSS"
+  | "Bootstrap"
+  | "Figma"
+  | "Framer Motion"
+
+  // Build / Testing
+  | "Webpack"
+  | "Jest"
+  | "Cypress"
+  | "Storybook"
+
+  // 3D / Graphics
+  | "Three.js"
+  | "WebGL"
+
+  // Marketing
   | "UI/UX"
   | "SEO";
+
+/**
+ * Valid project categories.
+ *
+ * These values must exactly match the category
+ * values used in /config/projects.ts.
+ */
+export type ValidCategory =
+  | "Web Dev"
+  | "Frontend"
+  | "UI/UX";
+
+/**
+ * Valid project types.
+ *
+ * These values must exactly match the type
+ * values used in /config/projects.ts.
+ */
+export type ValidExpType =
+  | "Personal"
+  | "Professional";
+
+/**
+ * Valid portfolio pages.
+ *
+ * These values must exactly match the keys
+ * used in /config/pages.ts.
+ */
+export type ValidPages =
+  | "home"
+  | "skills"
+  | "experience"
+  | "projects"
+  | "contact"
+  | "contributions"
+  | "resume"
+  | "blogs";
